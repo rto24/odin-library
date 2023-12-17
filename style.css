@@ -1,6 +1,7 @@
 :root {
-  --header-color: #e5e7eb;
+  --header-color: #020617;
   --login-btn-color: #475569;
+  --header-text-color: #f8fafc;
 }
 
 * {
@@ -30,20 +31,21 @@ body {
 .login {
   position: relative;
   float: right;
-  bottom: 45px;
+  bottom: 55px;
   right: 20px;
   padding: 10px 20px 10px 20px;
   font-weight: bold;
-  background-color: var(--login-btn-color);
+  background-color: var(--header-text-color);
   border: none;
   color: var(--header-color);
   border-radius: 10px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-.container .title {
+.header .title {
   margin: 20px;
   font-style: italic;
+  color: var(--header-text-color);
 }
 
 /* book cards */
