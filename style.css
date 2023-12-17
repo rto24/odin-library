@@ -1,6 +1,6 @@
 :root {
   --header-color: #e5e7eb;
-  --login-btn-color: 
+  --login-btn-color: #475569;
 }
 
 * {
@@ -32,6 +32,11 @@ body {
   right: 20px;
   padding: 10px 20px 10px 20px;
   font-weight: bold;
+  background-color: var(--login-btn-color);
+  border: none;
+  color: var(--header-color);
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .container .title {
