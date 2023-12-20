@@ -77,6 +77,15 @@ form {
   position: relative;
   top: 50px;
 }
+
+.book-inputs > button {
+  border: none;
+  background-color: var(--header-color);
+  color: var(--header-text-color);
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
   
   
 
