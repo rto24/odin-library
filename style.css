@@ -61,8 +61,21 @@ body {
 
 form {
   grid-column: 3 / 4;
-  grid-row: 2 / 3;
+  grid-row: 2 / 4;
   border: 2px var(--header-color) solid;
+}
+.book-info-head {
+  text-align: center;
+  font-style: italic;
+}
+
+.book-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  top: 50px;
 }
   
   
