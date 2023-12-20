@@ -57,3 +57,14 @@ body {
   grid-template-rows: repeat(4, minmax(200px, 1fr));
 }
 
+/* form */
+
+form {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  border: 2px var(--header-color) solid;
+}
+  
+  
+
+
