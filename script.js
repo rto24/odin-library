@@ -1,7 +1,6 @@
 const addBookBtn = document.querySelector('.add-book-btn');
 const bookForm = document.querySelector('#book-form');
 const closeForm = document.querySelector('.close-form');
-// const bookCard = document.querySelector('.book-card');
 const content = document.querySelector('.content');
 
 addBookBtn.addEventListener('click', () => {
@@ -13,7 +12,7 @@ closeForm.addEventListener('click', () => {
 });
 
 
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages) {
   this.title = title;
@@ -56,5 +55,8 @@ submit.addEventListener('click', function getTarget(e) {
   let pagesInput = `Pages: ` + document.getElementById('pgnum').value; 
   let newBook = new Book(titleInput, authorInput, pagesInput);
   myLibrary.push(newBook);
+  if (myLibrary.length >= 2) {
+    myLibrary.shift()
+  };
   addBookToLibrary();
 });
