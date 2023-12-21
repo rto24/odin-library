@@ -5,11 +5,11 @@ const closeForm = document.querySelector('.close-form');
 const content = document.querySelector('.content');
 
 addBookBtn.addEventListener('click', () => {
-  bookForm.style.display = 'block';
+  content.appendChild(bookForm);
 });
 
 closeForm.addEventListener('click', () => {
-  bookForm.style.display = 'none';
+  content.removeChild(bookForm);
 });
 
 
@@ -21,25 +21,16 @@ function Book(title, author, pages) {
   this.pages = pages;
 }
 
-function Library() {
-  this.book = [];
-  this.addBook = function(book) {
-    this.book.push(book);
-  }
-}
-
-let library = new Library();
-
 function addBookToLibrary() {
-  for (let i = 0; i < library.book.length; i++) {
+    for (let i = 0; i < myLibrary.length; i++) {
     let bookCard = document.createElement('div');
     let bookInfo = document.createElement('div');
     let title = document.createElement('p');
     let author = document.createElement('p');
     let pages = document.createElement('p');
-    let libraryTitle = library.book[i].title;
-    let libraryAuthor = library.book[i].author;
-    let libraryPages = library.book[i].pages;
+    let libraryTitle = myLibrary[i].title;
+    let libraryAuthor = myLibrary[i].author;
+    let libraryPages = myLibrary[i].pages;
     title.textContent = libraryTitle;
     author.textContent = libraryAuthor;
     pages.textContent = libraryPages;
@@ -60,10 +51,10 @@ let submit = document.querySelector('.submit-btn');
 
 submit.addEventListener('click', function getTarget(e) {
   e.preventDefault()
-  let titleInput = document.getElementById('title').value; 
-  let authorInput = document.getElementById('author').value; 
-  let pagesInput = document.getElementById('pgnum').value; 
+  let titleInput = `Title: ` + document.getElementById('title').value; 
+  let authorInput = `Author: ` + document.getElementById('author').value; 
+  let pagesInput = `Pages: ` + document.getElementById('pgnum').value; 
   let newBook = new Book(titleInput, authorInput, pagesInput);
-  library.addBook(newBook);
+  myLibrary.push(newBook);
   addBookToLibrary();
 });
