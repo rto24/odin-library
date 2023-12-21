@@ -17,9 +17,19 @@ function Book(title, author, pages) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  // this.read =
 }
 
+function Library() {
+  this.book = [];
+  this.addBook = function(book) {
+    this.book.push(book);
+  }
+}
+
+const library = new Library();
+
 function addBookToLibrary() {
+
+
   
 }
