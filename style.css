@@ -59,6 +59,18 @@ body {
   grid-template-rows: repeat(4, 1fr);
 }
 
+.content .book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px var(--header-color) solid;
+}
+
+.book-info > p {
+  font-size: 20px;
+  padding: 10px;
+}
+
 /* form */
 
 form {
@@ -66,6 +78,7 @@ form {
   grid-row: 2 / 4;
   border: 2px var(--header-color) solid;
 }
+
 .book-info-head {
   text-align: center;
   font-style: italic;
