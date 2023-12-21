@@ -49,4 +49,13 @@ function addBookToLibrary() {
 }
 
 let submit = document.querySelector('.submit-btn');
-console.log(submit);
+
+submit.addEventListener('click', function getTarget(e) {
+  e.preventDefault()
+  let titleInput = document.getElementById('title').value; 
+  let authorInput = document.getElementById('author').value; 
+  let pagesInput = document.getElementById('pgnum').value; 
+  let newBook = new Book(titleInput, authorInput, pagesInput);
+  library.addBook(newBook);
+  addBookToLibrary();
+});
