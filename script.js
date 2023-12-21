@@ -47,3 +47,6 @@ function addBookToLibrary() {
     bookInfo.appendChild(pages);
   }
 }
+
+let submit = document.querySelector('.submit-btn');
+console.log(submit);
