@@ -27,12 +27,14 @@ function addBookToLibrary() {
     let title = document.createElement('p');
     let author = document.createElement('p');
     let pages = document.createElement('p');
+    let removeBook = document.createElement('button');
     let libraryTitle = myLibrary[i].title;
     let libraryAuthor = myLibrary[i].author;
     let libraryPages = myLibrary[i].pages;
     title.textContent = libraryTitle;
     author.textContent = libraryAuthor;
     pages.textContent = libraryPages;
+    removeBook.textContent = 'Remove';
     content.appendChild(bookCard);
     bookCard.classList.add('book-card');
     bookCard.appendChild(bookInfo);
@@ -43,6 +45,8 @@ function addBookToLibrary() {
     author.classList.add('book-author');
     bookInfo.appendChild(pages);
     pages.classList.add('book-pg');
+    bookInfo.appendChild(removeBook);
+    removeBook.classList.add('remove-book-btn');
   }
 }
 
