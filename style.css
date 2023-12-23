@@ -64,6 +64,9 @@ body {
   flex-direction: column;
   align-items: center;
   border: 2px var(--header-color) solid;
+  margin: 10px;
+  box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3);
+
 }
 
 .book-info > p {
@@ -77,6 +80,7 @@ form {
   grid-column: 3 / 4;
   grid-row: 2 / 4;
   border: 2px var(--header-color) solid;
+  box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3);
 }
 
 .book-info-head {
