@@ -47,6 +47,7 @@ body {
 .header .title {
   margin: 20px;
   font-style: italic;
+  font-size: 40px;
   color: var(--header-text-color);
 }
 
