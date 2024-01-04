@@ -3,6 +3,8 @@ const bookForm = document.querySelector('#book-form');
 const closeForm = document.querySelector('.close-form');
 const content = document.querySelector('.content');
 
+
+
 addBookBtn.addEventListener('click', () => {
   content.appendChild(bookForm);
 });
@@ -11,13 +13,14 @@ closeForm.addEventListener('click', () => {
   content.removeChild(bookForm);
 });
 
-
 let myLibrary = [];
 
-function Book(title, author, pages) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
 }
 
 function addBookToLibrary() {
@@ -47,20 +50,38 @@ function addBookToLibrary() {
     pages.classList.add('book-pg');
     bookInfo.appendChild(removeBook);
     removeBook.classList.add('remove-book-btn');
+    incrementCardId();
   }
 }
+
+
+function incrementCardId() {
+  let bookCardSelect = document.querySelectorAll('.book-card');
+  for (i = 0; i < bookCardSelect.length; i++) {
+    bookCardSelect[i].setAttribute('id', i)
+  }
+  let remove = document.querySelector('.remove-book-btn');
+  remove.addEventListener('click', function deleteBook() {
+    myLibrary.pop(bookCardSelect[i]);
+    
+  }
+  
+)}
 
 let submit = document.querySelector('.submit-btn');
 
 submit.addEventListener('click', function getTarget(e) {
-  e.preventDefault()
+  e.preventDefault();
   let titleInput = `Title: ` + document.getElementById('title').value; 
   let authorInput = `Author: ` + document.getElementById('author').value; 
   let pagesInput = `Pages: ` + document.getElementById('pgnum').value; 
   let newBook = new Book(titleInput, authorInput, pagesInput);
+  let addBook = myLibrary.slice(myLibrary.length - 1);
+  
   myLibrary.push(newBook);
   if (myLibrary.length >= 2) {
     myLibrary.shift()
   };
+
   addBookToLibrary();
-});
+  });
